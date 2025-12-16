@@ -18,7 +18,7 @@
 }
 
 .contact-info-title {
-  font-size: 1.75rem;
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
   color: var(--light);
   margin-bottom: 15px;
 }
@@ -27,6 +27,7 @@
   color: rgba(255, 255, 255, 0.8);
   margin-bottom: 40px;
   line-height: 1.7;
+  font-size: clamp(0.9rem, 1.8vw, 1rem);
 }
 
 .contact-methods {
@@ -59,7 +60,7 @@
 
 .contact-method-title {
   display: block;
-  font-size: 0.75rem;
+  font-size: clamp(0.65rem, 1.2vw, 0.75rem);
   text-transform: uppercase;
   letter-spacing: 1px;
   opacity: 0.7;
@@ -69,6 +70,7 @@
 .contact-method-content {
   display: block;
   font-weight: 500;
+  font-size: clamp(0.8rem, 1.6vw, 1rem);
 }
 
 .contact-decoration {
@@ -123,7 +125,7 @@
   border-radius: 12px;
   color: var(--light);
   font-family: 'Inter', sans-serif;
-  font-size: 1rem;
+  font-size: clamp(0.9rem, 1.8vw, 1rem);
   transition: all 0.3s ease;
 }
 
@@ -149,23 +151,160 @@
   justify-content: center;
 }
 
+/* Tablet Landscape */
 @media (max-width: 992px) {
   .contact-grid {
     grid-template-columns: 1fr;
+    gap: 40px;
+    margin-top: 40px;
   }
 
   .contact-info {
     order: 2;
   }
+
+  .contact-info,
+  .contact-form {
+    padding: 40px 35px;
+  }
 }
 
+/* Tablet Portrait */
+@media (max-width: 768px) {
+  .contact-grid {
+    gap: 30px;
+    margin-top: 30px;
+  }
+
+  .contact-info-title {
+    font-size: 1.5rem;
+  }
+
+  .contact-info-description {
+    font-size: 0.95rem;
+    margin-bottom: 30px;
+  }
+
+  .contact-methods {
+    gap: 20px;
+  }
+
+  .contact-method-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .contact-method-content {
+    font-size: 0.9rem;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 14px 18px;
+    font-size: 0.95rem;
+  }
+
+  .form-group textarea {
+    min-height: 130px;
+  }
+}
+
+/* Mobile */
 @media (max-width: 576px) {
+  .contact-grid {
+    gap: 25px;
+    margin-top: 25px;
+  }
+
   .form-row {
     grid-template-columns: 1fr;
   }
 
   .contact-info,
   .contact-form {
-    padding: 30px 25px;
+    padding: 25px 20px;
+    border-radius: 18px;
+  }
+
+  .contact-info-title {
+    font-size: 1.35rem;
+  }
+
+  .contact-info-description {
+    font-size: 0.9rem;
+    margin-bottom: 25px;
+    line-height: 1.6;
+  }
+
+  .contact-method {
+    gap: 12px;
+  }
+
+  .contact-method-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+  }
+
+  .contact-method-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .contact-method-title {
+    font-size: 0.7rem;
+  }
+
+  .contact-method-content {
+    font-size: 0.85rem;
+  }
+
+  .form-group {
+    margin-bottom: 15px;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 14px 16px;
+    font-size: 0.95rem;
+    border-radius: 10px;
+  }
+
+  .form-group textarea {
+    min-height: 120px;
+  }
+
+  .circle-1 {
+    width: 100px;
+    height: 100px;
+  }
+
+  .circle-2 {
+    width: 70px;
+    height: 70px;
+    bottom: 60px;
+    right: 60px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 400px) {
+  .contact-info,
+  .contact-form {
+    padding: 20px 15px;
+  }
+
+  .contact-info-title {
+    font-size: 1.25rem;
+  }
+
+  .contact-method-content {
+    font-size: 0.8rem;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 12px 14px;
+    font-size: 0.9rem;
   }
 }

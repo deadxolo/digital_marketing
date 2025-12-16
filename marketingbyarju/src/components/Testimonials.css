@@ -42,7 +42,7 @@
 }
 
 .testimonial-quote {
-  font-size: 1.5rem;
+  font-size: clamp(0.95rem, 2.5vw, 1.5rem);
   color: var(--light);
   line-height: 1.8;
   margin-bottom: 40px;
@@ -59,15 +59,16 @@
 .author-avatar {
   width: 60px;
   height: 60px;
-  background: var(--gradient);
   border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-weight: 700;
-  font-size: 1.25rem;
-  color: var(--light);
+  overflow: hidden;
+  border: 3px solid var(--secondary);
+  box-shadow: 0 5px 20px rgba(193, 15, 255, 0.3);
+}
+
+.author-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .author-info {
@@ -78,12 +79,12 @@
   display: block;
   font-family: 'Plus Jakarta Sans', sans-serif;
   font-weight: 600;
-  font-size: 1.125rem;
+  font-size: clamp(0.95rem, 2vw, 1.125rem);
   color: var(--light);
 }
 
 .author-role {
-  font-size: 0.875rem;
+  font-size: clamp(0.75rem, 1.5vw, 0.875rem);
   color: var(--gray-light);
 }
 
@@ -134,12 +135,126 @@
   transform: scale(1.2);
 }
 
+/* Tablet Portrait */
 @media (max-width: 768px) {
-  .testimonial-quote {
-    font-size: 1.125rem;
+  .testimonials-gradient {
+    width: 400px;
+    height: 400px;
   }
 
   .testimonial-card {
     padding: 20px;
+  }
+
+  .quote-icon {
+    margin-bottom: 20px;
+  }
+
+  .quote-icon svg {
+    width: 40px;
+    height: 40px;
+  }
+
+  .testimonial-quote {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    margin-bottom: 30px;
+  }
+
+  .author-avatar {
+    width: 50px;
+    height: 50px;
+  }
+
+  .author-name {
+    font-size: 1rem;
+  }
+
+  .author-role {
+    font-size: 0.8rem;
+  }
+
+  .testimonial-controls {
+    margin-top: 30px;
+    gap: 15px;
+  }
+
+  .control-btn {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .testimonials-container {
+    padding: 0 10px;
+  }
+
+  .testimonial-card {
+    padding: 15px 10px;
+  }
+
+  .quote-icon {
+    margin-bottom: 15px;
+  }
+
+  .quote-icon svg {
+    width: 32px;
+    height: 32px;
+  }
+
+  .testimonial-quote {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+  }
+
+  .testimonial-author {
+    gap: 12px;
+  }
+
+  .author-avatar {
+    width: 45px;
+    height: 45px;
+  }
+
+  .author-name {
+    font-size: 0.95rem;
+  }
+
+  .author-role {
+    font-size: 0.75rem;
+  }
+
+  .testimonial-controls {
+    margin-top: 25px;
+    gap: 12px;
+  }
+
+  .control-btn {
+    width: 40px;
+    height: 40px;
+  }
+
+  .dot {
+    width: 8px;
+    height: 8px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 400px) {
+  .testimonial-quote {
+    font-size: 0.95rem;
+  }
+
+  .testimonial-author {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .author-info {
+    text-align: center;
   }
 }

@@ -9,19 +9,19 @@ const testimonials = [
     quote: "marketingbyarju transformed our digital presence completely. Their strategic approach helped us achieve 300% growth in just 6 months.",
     author: "Sarah Johnson",
     role: "CEO, TechStart Inc",
-    avatar: "SJ"
+    avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face"
   },
   {
     quote: "The team's creativity and data-driven approach exceeded our expectations. They're not just an agency, they're true partners in growth.",
     author: "Michael Chen",
     role: "Marketing Director, Innovate Co",
-    avatar: "MC"
+    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face"
   },
   {
     quote: "Working with marketingbyarju was a game-changer. Their SEO expertise put us on the first page of Google within months.",
     author: "Emily Rodriguez",
     role: "Founder, EcoLife Brand",
-    avatar: "ER"
+    avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face"
   }
 ]
 
@@ -67,7 +67,7 @@ const Testimonials = () => {
             <p className="testimonial-quote">{testimonials[currentIndex].quote}</p>
             <div className="testimonial-author">
               <div className="author-avatar">
-                {testimonials[currentIndex].avatar}
+                <img src={testimonials[currentIndex].avatar} alt={testimonials[currentIndex].author} />
               </div>
               <div className="author-info">
                 <span className="author-name">{testimonials[currentIndex].author}</span>

@@ -17,14 +17,67 @@
 }
 
 .project-card:hover {
-  transform: translateY(-10px);
   border-color: rgba(193, 15, 255, 0.3);
+}
+
+/* 3D Card Styles */
+.project-card-3d {
+  transform-style: preserve-3d;
+  will-change: transform;
+  cursor: pointer;
+}
+
+.project-glare {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, transparent 50%);
+  z-index: 10;
+  transition: opacity 0.3s ease;
+}
+
+.project-shadow-3d {
+  position: absolute;
+  top: 20px;
+  left: 10px;
+  right: -10px;
+  bottom: -20px;
+  border-radius: 20px;
+  filter: blur(25px);
+  z-index: -1;
+  transition: all 0.3s ease;
+}
+
+.project-float-element {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  opacity: 0.6;
+  filter: blur(1px);
 }
 
 .project-image {
   height: 200px;
   position: relative;
   overflow: hidden;
+}
+
+.project-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-img {
+  transform: scale(1.1);
 }
 
 .project-overlay {
@@ -66,7 +119,7 @@
 }
 
 .project-category {
-  font-size: 0.75rem;
+  font-size: clamp(0.65rem, 1.3vw, 0.75rem);
   text-transform: uppercase;
   letter-spacing: 2px;
   color: var(--secondary);
@@ -74,25 +127,136 @@
 }
 
 .project-title {
-  font-size: 1.25rem;
+  font-size: clamp(1.05rem, 2.2vw, 1.25rem);
   color: var(--light);
   margin: 10px 0;
 }
 
 .project-description {
-  font-size: 0.9rem;
+  font-size: clamp(0.85rem, 1.6vw, 0.9rem);
   color: var(--gray-light);
   line-height: 1.6;
+  margin-bottom: 10px;
 }
 
+.project-view-more {
+  display: inline-block;
+  font-size: clamp(0.8rem, 1.5vw, 0.85rem);
+  color: var(--secondary);
+  font-weight: 500;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+}
+
+.project-card:hover .project-view-more {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Tablet Landscape */
 @media (max-width: 992px) {
   .portfolio-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+
+  .project-content {
+    padding: 20px;
+  }
+
+  .project-title {
+    font-size: 1.15rem;
+  }
+
+  .project-description {
+    font-size: 0.85rem;
   }
 }
 
+/* Tablet Portrait */
+@media (max-width: 768px) {
+  .portfolio-grid {
+    gap: 20px;
+  }
+
+  .project-image {
+    height: 180px;
+  }
+
+  .project-content {
+    padding: 18px;
+  }
+
+  .project-category {
+    font-size: 0.7rem;
+  }
+
+  .project-title {
+    font-size: 1.1rem;
+    margin: 8px 0;
+  }
+
+  .project-description {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+
+  .project-link {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+/* Mobile */
 @media (max-width: 576px) {
   .portfolio-grid {
     grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .project-card {
+    border-radius: 16px;
+  }
+
+  .project-image {
+    height: 200px;
+  }
+
+  .project-content {
+    padding: 20px;
+  }
+
+  .project-title {
+    font-size: 1.15rem;
+  }
+
+  .project-description {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .project-view-more {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 400px) {
+  .project-image {
+    height: 180px;
+  }
+
+  .project-content {
+    padding: 15px;
+  }
+
+  .project-title {
+    font-size: 1.05rem;
+  }
+
+  .project-description {
+    font-size: 0.85rem;
   }
 }

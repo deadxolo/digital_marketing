@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { Menu, X } from 'lucide-react'
+import { Menu, X, MessageCircle } from 'lucide-react'
 import './Navbar.css'
 
 const Navbar = () => {
@@ -22,6 +22,12 @@ const Navbar = () => {
     { name: 'Portfolio', href: '#portfolio' },
     { name: 'Contact', href: '#contact' },
   ]
+
+  const openChatBot = () => {
+    // Dispatch custom event to open chatbot
+    window.dispatchEvent(new CustomEvent('openChatBot'))
+    setIsMobileMenuOpen(false)
+  }
 
   return (
     <motion.nav
@@ -50,6 +56,18 @@ const Navbar = () => {
               {link.name}
             </motion.a>
           ))}
+          <motion.button
+            className="nav-ai-btn"
+            onClick={openChatBot}
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5 }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <MessageCircle size={18} />
+            <span>AI Chat</span>
+          </motion.button>
           <a href="#contact" className="btn btn-primary nav-cta">
             Get Started
           </a>

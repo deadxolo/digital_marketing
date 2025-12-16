@@ -33,7 +33,7 @@
 .stat-number {
   display: block;
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 3.5rem;
+  font-size: clamp(2rem, 6vw, 3.5rem);
   font-weight: 800;
   color: var(--light);
   line-height: 1;
@@ -41,13 +41,37 @@
 }
 
 .stat-label {
-  font-size: 1rem;
+  font-size: clamp(0.7rem, 1.8vw, 1rem);
   color: rgba(255, 255, 255, 0.8);
   text-transform: uppercase;
   letter-spacing: 2px;
 }
 
+/* Tablet Landscape */
+@media (max-width: 992px) {
+  .stats {
+    padding: 60px 0;
+  }
+
+  .stats-grid {
+    gap: 30px;
+  }
+
+  .stat-number {
+    font-size: 3rem;
+  }
+
+  .stat-label {
+    font-size: 0.9rem;
+  }
+}
+
+/* Tablet Portrait */
 @media (max-width: 768px) {
+  .stats {
+    padding: 50px 0;
+  }
+
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 40px 20px;
@@ -59,11 +83,51 @@
 
   .stat-label {
     font-size: 0.8rem;
+    letter-spacing: 1px;
   }
 }
 
+/* Mobile */
+@media (max-width: 576px) {
+  .stats {
+    padding: 40px 0;
+  }
+
+  .stats-grid {
+    gap: 30px 15px;
+  }
+
+  .stat-number {
+    font-size: 2rem;
+    margin-bottom: 5px;
+  }
+
+  .stat-label {
+    font-size: 0.7rem;
+  }
+}
+
+/* Small Mobile */
 @media (max-width: 400px) {
   .stats-grid {
     grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .stat-item {
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .stat-item:last-child {
+    border-bottom: none;
+  }
+
+  .stat-number {
+    font-size: 2.25rem;
+  }
+
+  .stat-label {
+    font-size: 0.75rem;
   }
 }
