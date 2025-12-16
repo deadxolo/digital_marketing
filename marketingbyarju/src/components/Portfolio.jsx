@@ -79,7 +79,7 @@ const Portfolio = () => {
   const isHeaderInView = useInView(headerRef, { once: true, margin: '-100px' })
 
   return (
-    <section className="portfolio section" id="portfolio">
+    <section className="portfolio section" id="portfolio" aria-label="Our portfolio and success stories">
       <div className="container">
         <motion.div
           ref={headerRef}

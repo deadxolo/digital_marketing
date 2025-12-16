@@ -4,7 +4,7 @@ import './Hero.css'
 
 const Hero = () => {
   return (
-    <section className="hero" id="home">
+    <section className="hero" id="home" aria-label="Hero section - Welcome to marketingbyarju digital marketing agency">
       <div className="hero-bg">
         <div className="hero-gradient-1"></div>
         <div className="hero-gradient-2"></div>

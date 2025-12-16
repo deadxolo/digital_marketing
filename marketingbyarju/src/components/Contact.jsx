@@ -48,7 +48,7 @@ const Contact = () => {
   ]
 
   return (
-    <section className="contact section" id="contact" ref={ref}>
+    <section className="contact section" id="contact" ref={ref} aria-label="Contact marketingbyarju">
       <div className="container">
         <motion.div
           className="section-header"

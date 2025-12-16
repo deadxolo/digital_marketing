@@ -16,7 +16,7 @@ const About = () => {
   const isInView = useInView(ref, { once: true, margin: '-100px' })
 
   return (
-    <section className="about section" id="about">
+    <section className="about section" id="about" aria-label="About marketingbyarju">
       <div className="container">
         <div className="about-grid" ref={ref}>
           <motion.div

@@ -1,0 +1,21 @@
+{
+  "name": "marketingbyarju - Digital Marketing Agency",
+  "short_name": "marketingbyarju",
+  "description": "Leading digital marketing agency in Hisar, Haryana. SEO, Social Media Marketing, Web Development & Brand Identity services.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#060097",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "marketing"],
+  "lang": "en-IN",
+  "dir": "ltr"
+}

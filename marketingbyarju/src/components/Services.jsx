@@ -71,7 +71,7 @@ const Services = () => {
   const isHeaderInView = useInView(headerRef, { once: true, margin: '-100px' })
 
   return (
-    <section className="services section" id="services">
+    <section className="services section" id="services" aria-label="Our digital marketing services">
       <div className="container">
         <motion.div
           ref={headerRef}

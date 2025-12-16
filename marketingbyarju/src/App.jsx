@@ -12,14 +12,18 @@ import './App.css'
 function App() {
   return (
     <div className="app">
-      <Navbar />
-      <Hero />
-      <Services />
-      <About />
-      <Stats />
-      <Portfolio />
-      <Testimonials />
-      <Contact />
+      <header>
+        <Navbar />
+      </header>
+      <main>
+        <Hero />
+        <Services />
+        <About />
+        <Stats />
+        <Portfolio />
+        <Testimonials />
+        <Contact />
+      </main>
       <Footer />
     </div>
   )
